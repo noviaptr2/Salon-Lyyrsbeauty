@@ -1,0 +1,716 @@
+/* =========================================
+   LYYRSBEAUTY - FIGMA DESIGN ALIGNMENT
+========================================= */
+
+:root {
+    --pink: #e56d98;
+    --pink-dark: #c65380;
+    --pink-light: #fff0f5;
+    --cream: #fffaf8;
+    --text: #39252f;
+    --muted: #8c7881;
+    --white: #fff;
+    --border: #f1dce5;
+    --shadow: 0 12px 34px rgba(89,45,65,.08);
+}
+
+html {
+    background: var(--cream);
+}
+
+body {
+    background: var(--cream);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+}
+
+/* =========================================
+   NAVBAR
+========================================= */
+
+.navbar {
+    background: rgba(255,250,248,.96);
+    border-bottom: 1px solid #f1dce5;
+    box-shadow: 0 3px 18px rgba(57,37,47,.035);
+}
+
+.nav-container {
+    max-width: 1248px;
+    min-height: 76px;
+    padding: 10px 28px;
+}
+
+.brand img {
+    width: 42px;
+    height: 42px;
+    object-fit: contain;
+}
+
+.brand-name {
+    font-size: 21px;
+    color: #c65380;
+}
+
+.brand-caption {
+    font-size: 8px;
+    letter-spacing: 1.7px;
+}
+
+.nav-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    box-shadow: none;
+    background: #fff;
+    border-color: #f0d8e2;
+}
+
+.nav-links {
+    border-radius: 16px;
+    box-shadow: 0 14px 38px rgba(57,37,47,.13);
+}
+
+.nav-links > a {
+    font-size: 13px;
+}
+
+/* =========================================
+   BUTTON
+========================================= */
+
+.btn {
+    background: #e56d98;
+    color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 13px;
+    box-shadow: none;
+}
+
+.btn:hover {
+    background: #c65380;
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: #fff;
+    color: #c65380;
+    border: 1px solid #e8a5bd;
+}
+
+.container {
+    max-width: 1248px;
+    padding: 48px 28px;
+}
+
+/* =========================================
+   SECTION
+========================================= */
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #d65f8c;
+}
+
+.section-title {
+    font-size: 32px;
+    color: #39252f;
+}
+
+.section-description {
+    font-size: 13px;
+    line-height: 1.8;
+    color: #8c7881;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+    background: #39252f;
+    padding: 23px 28px;
+}
+
+.footer-inner {
+    max-width: 1248px;
+}
+
+.footer p {
+    font-size: 11px;
+    color: #f3e6eb;
+}
+
+/* =========================================
+   BERANDA - HERO
+========================================= */
+
+.hero {
+    background: #fff0f5;
+}
+
+.hero-inner {
+    max-width: 1248px;
+    padding: 62px 28px;
+    gap: 38px;
+    grid-template-columns: 1.02fr .98fr;
+}
+
+.hero::before {
+    background:
+        linear-gradient(
+            90deg,
+            rgba(255,250,248,.94),
+            rgba(255,240,245,.66)
+        ),
+        url('/images/salon-home.jpg') center/cover no-repeat;
+}
+
+.hero-badge {
+    font-size: 10px;
+    letter-spacing: 1px;
+    padding: 7px 13px;
+    color: #c65380;
+    border-color: #f1dce5;
+}
+
+.hero h1 {
+    font-size: clamp(34px,4.2vw,52px);
+    line-height: 1.12;
+    color: #39252f;
+}
+
+.hero-description {
+    font-size: 13px;
+    line-height: 1.85;
+    color: #806d76;
+    max-width: 440px;
+}
+
+.hero-note {
+    font-size: 11px;
+    color: #8c7881;
+}
+
+.hero-image-wrap {
+    min-height: 350px;
+    border-radius: 16px 90px 16px 16px;
+    box-shadow: 0 16px 38px rgba(151,76,106,.14);
+}
+
+/* =========================================
+   LOGO CARD - FIX FOTO LOGO AGAR UTUH
+========================================= */
+
+.logo-card {
+    position: absolute;
+    left: 16px;
+    bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 16px;
+    border-radius: 0 22px 22px 0;
+    min-width: 280px;
+    background: #fff;
+    overflow: visible;
+}
+
+.logo-card img {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    object-position: center;
+    flex-shrink: 0;
+    padding: 3px;
+    display: block;
+}
+
+.logo-card strong {
+    font-size: 14px;
+    color: #c65380;
+}
+
+.logo-card small {
+    font-size: 9px;
+}
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.benefits {
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.benefit {
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 5px 18px rgba(89,45,65,.04);
+}
+
+.benefit-icon {
+    font-size: 22px;
+    margin-bottom: 8px;
+}
+
+.benefit h3 {
+    font-size: 13px;
+}
+
+.benefit p {
+    font-size: 11px;
+    line-height: 1.7;
+}
+
+/* =========================================
+   SERVICE CARDS
+========================================= */
+
+.service-section {
+    background: #fff;
+}
+
+.service-heading {
+    margin-bottom: 22px;
+}
+
+.service-grid {
+    gap: 16px;
+}
+
+.service-card {
+    border-radius: 13px;
+    background: #fff;
+    border-color: #f1dce5;
+    box-shadow: 0 5px 18px rgba(89,45,65,.04);
+}
+
+.service-photo {
+    height: 155px;
+}
+
+.service-content {
+    padding: 15px;
+}
+
+.service-content h3 {
+    font-size: 17px;
+}
+
+.service-content p {
+    font-size: 11px;
+    line-height: 1.65;
+    min-height: 40px;
+}
+
+.service-meta {
+    font-size: 11px;
+    margin: 12px 0;
+}
+
+.service-price {
+    font-size: 15px;
+}
+
+.service-duration {
+    font-size: 10px;
+}
+
+/* =========================================
+   CTA SECTION
+========================================= */
+
+.cta-section {
+    margin: 42px 28px;
+    padding: 35px 22px;
+    border-radius: 16px;
+    background: linear-gradient(110deg,#e56d98,#c65380);
+}
+
+.cta-section h2 {
+    font-size: 28px;
+}
+
+.cta-section p {
+    font-size: 12px;
+}
+
+/* =========================================
+   CUSTOMER FORMS
+========================================= */
+
+.form-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+}
+
+.form-group label {
+    font-size: 12px;
+    color: #59434e;
+}
+
+.form-control,
+.form-group input,
+.form-group select,
+.form-group textarea {
+    border: 1px solid #ead5df;
+    border-radius: 8px;
+    padding: 11px 13px;
+    background: #fffdfd;
+    font-size: 13px;
+}
+
+.form-control:focus,
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #e56d98;
+    box-shadow: 0 0 0 3px rgba(229,109,152,.12);
+}
+
+.alert {
+    font-size: 13px;
+    border-radius: 10px;
+}
+
+.queue-number {
+    color: #c65380;
+    font-family: 'Playfair Display',serif;
+}
+
+/* =========================================
+   PROFILE
+========================================= */
+
+.profile-page {
+    max-width: 850px;
+}
+
+.profile-card {
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.profile-cover {
+    height: 105px;
+    background: linear-gradient(110deg,#f8c7d9,#eaa0bd,#eadcf2);
+}
+
+.profile-body {
+    padding: 0 26px 26px;
+}
+
+.profile-avatar {
+    width: 96px;
+    height: 96px;
+}
+
+.profile-btn {
+    border-radius: 8px;
+}
+
+/* =========================================
+   ADMIN DASHBOARD
+========================================= */
+
+.dashboard-hero {
+    border-radius: 16px;
+    background: linear-gradient(
+        115deg,
+        #39252f 0%,
+        #75445c 58%,
+        #d66a94 100%
+    );
+    padding: 28px;
+}
+
+.stat-card,
+.dashboard-section {
+    border-radius: 14px;
+    box-shadow: 0 6px 20px rgba(57,37,47,.05);
+}
+
+.stat-card {
+    padding: 18px;
+}
+
+.stat-card .stat-icon {
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+}
+
+.stat-value {
+    font-size: 29px;
+}
+
+.dashboard-section {
+    padding: 20px;
+}
+
+table {
+    font-size: 12px;
+}
+
+table th {
+    font-size: 11px;
+    color: #6c4c5b;
+}
+
+table td {
+    font-size: 12px;
+}
+
+table th,
+table td {
+    padding: 11px;
+}
+
+.admin-shortcut {
+    border-radius: 9px;
+}
+
+/* =========================================
+   TOMBOL BATAL BOOKING
+========================================= */
+
+.btn-cancel {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 10px 20px;
+    border: 1px solid #e8a5bd;
+    border-radius: 8px;
+    background: #fff0f5;
+    color: #c65380;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .3s ease;
+}
+
+.btn-cancel:hover {
+    background: #e56d98;
+    color: #fff;
+    border-color: #e56d98;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(229,109,152,.2);
+}
+
+.btn-cancel:active {
+    transform: scale(.97);
+}
+
+/* =========================================
+   MOBILE LAYOUT
+========================================= */
+
+@media(max-width:850px) {
+
+    .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 25px;
+        padding: 38px 20px;
+    }
+
+    .hero-image-wrap {
+        min-height: 280px;
+        border-radius: 14px 60px 14px 14px;
+    }
+
+    .benefits {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(2,minmax(0,1fr));
+    }
+
+    .container {
+        padding: 34px 18px;
+    }
+
+    .dashboard-hero {
+        padding: 23px 20px;
+    }
+}
+
+/* =========================================
+   SMALL SCREEN
+========================================= */
+
+@media(max-width:600px) {
+
+    .nav-container {
+        min-height: 64px;
+        padding: 8px 15px;
+    }
+
+    .brand img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .brand-name {
+        font-size: 18px;
+    }
+
+    .brand-caption {
+        font-size: 7px;
+    }
+
+    .container {
+        padding: 26px 14px;
+    }
+
+    .hero-inner {
+        padding: 30px 16px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero-description {
+        font-size: 12px;
+    }
+
+    .hero-image-wrap {
+        min-height: 230px;
+    }
+
+    .logo-card {
+        min-width: 230px;
+        padding: 9px 12px;
+        gap: 9px;
+    }
+
+    .logo-card img {
+        width: 55px;
+        height: 55px;
+    }
+
+    .hero-buttons {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-photo {
+        height: 190px;
+    }
+
+    .service-heading {
+        align-items: flex-start;
+    }
+
+    .cta-section {
+        margin: 25px 14px;
+        padding: 28px 16px;
+    }
+
+    .form-card {
+        padding: 19px 16px;
+        border-radius: 13px;
+    }
+
+    .dashboard-hero {
+        padding: 20px 17px;
+        border-radius: 13px;
+    }
+
+    .dashboard-section {
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .stat-card {
+        padding: 15px;
+        border-radius: 13px;
+    }
+
+    .stat-value {
+        font-size: 25px;
+    }
+
+    .profile-body {
+        padding: 0 16px 20px;
+    }
+
+    .profile-top {
+        gap: 12px;
+        flex-wrap: wrap;
+    }
+
+    .profile-avatar {
+        width: 82px;
+        height: 82px;
+    }
+
+    .profile-summary h2 {
+        font-size: 18px;
+    }
+
+    .profile-actions .profile-btn {
+        width: 100%;
+    }
+
+    /* TABLE RESPONSIVE */
+
+    .dashboard-section > div[style*="overflow-x:auto"],
+    div[style*="overflow-x:auto"] {
+        max-width: 100%;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    table {
+        min-width: 620px;
+    }
+
+    /* TOMBOL BATAL MOBILE */
+
+    .btn-cancel {
+        width: 100%;
+    }
+}
+/* Posisi foto salon di atas tombol */
+.hero-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.hero-image-wrap {
+    order: 2;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.hero-buttons {
+    order: 3;
+}
+
+.hero-note {
+    order: 4;
+}
+
+/* Foto tetap berada di tengah */
+.hero-image-wrap {
+    align-self: center;
+    max-width: 100%;
+}

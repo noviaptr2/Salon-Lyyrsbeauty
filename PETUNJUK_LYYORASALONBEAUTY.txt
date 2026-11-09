@@ -1,0 +1,11 @@
+LYYORASALONBEAUTY - PERBAIKAN PROFIL
+
+1. Ekstrak ZIP ke folder project yang kamu inginkan.
+2. Pastikan Laragon/MySQL aktif dan database bernama lyyorasalon sudah ada.
+3. Klik dua kali SIAPKAN_LYYORASALONBEAUTY.bat. File ini akan menjalankan dependency (jika belum ada), migration, dan membersihkan cache.
+4. Setelah selesai, klik dua kali MULAI_WEBSITE.bat.
+5. Buka http://127.0.0.1:8000/profil setelah login.
+
+Profil mendukung foto JPG/PNG/WEBP maksimal 2 MB. Foto disajikan melalui route Laravel, jadi halaman profil tidak bergantung pada symbolic link public/storage. Bagian ganti password tidak ditampilkan di halaman profil.
+
+Catatan: file .env berisi konfigurasi lokal; sesuaikan hanya jika database atau pengaturan komputermu berbeda. Jangan hapus storage_lama di project yang lama sebelum memastikan semua gambar aman.
