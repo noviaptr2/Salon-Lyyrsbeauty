@@ -13,7 +13,7 @@ use RuntimeException;
 
 class AntreanController extends Controller
 {
-    private const JAM_BUKA = '08:00';
+    private const JAM_BUKA = '09:30';
     private const JAM_TUTUP = '21:30';
 
     private const KUOTA_LAYANAN = [
@@ -118,7 +118,7 @@ class AntreanController extends Controller
             $sekarang->format('H:i') >= self::JAM_TUTUP
         ) {
             throw new RuntimeException(
-                'Salon hanya menerima booking pukul 08.00 sampai 21.30.'
+                'Salon hanya menerima booking pukul 9.30 sampai 21.30.'
             );
         }
 

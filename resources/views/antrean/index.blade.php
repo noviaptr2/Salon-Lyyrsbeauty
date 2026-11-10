@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Daftar Antrean | LyyrsBeauty')
+@section('title', 'Daftar Antrean | LyyrsBeauty')
 
 @section('content')
 
@@ -101,6 +101,7 @@
                         {{ $antrean->layanan?->nama_layanan ?? 'Layanan tidak tersedia' }}
                     </p>
 
+                    {{-- TANGGAL ANTREAN --}}
                     <p style="margin-top:10px">
                         📅 {{ $antrean->tanggal_antrean?->format('d M Y') ?? '-' }}
                     </p>
@@ -142,12 +143,88 @@
                     @endif
 
                     {{-- STATUS PEMBAYARAN --}}
-                    <p style="font-size:13px;color:var(--muted);margin-top:5px">
-                        Pembayaran:
-                        <strong>
-                            {{ ucfirst(str_replace('_', ' ', $antrean->payment_status ?? 'terverifikasi')) }}
+                    @php
+                        $statusPembayaran = $antrean->payment_status ?? 'menunggu_pembayaran';
+
+                        $infoPembayaran = match ($statusPembayaran) {
+                            'menunggu_pembayaran' => [
+                                'label' => 'Belum Dibayar',
+                                'warna' => '#9a6700',
+                                'background' => '#fff4d6',
+                                'ikon' => '💳',
+                                'pesan' => 'Silakan selesaikan pembayaran QRIS.'
+                            ],
+
+                            'menunggu_verifikasi' => [
+                                'label' => 'Menunggu Verifikasi',
+                                'warna' => '#245c9c',
+                                'background' => '#eaf3ff',
+                                'ikon' => '🔎',
+                                'pesan' => 'Bukti pembayaran sedang diperiksa admin.'
+                            ],
+
+                            'ditolak' => [
+                                'label' => 'Pembayaran Ditolak',
+                                'warna' => '#b4233d',
+                                'background' => '#ffe9ed',
+                                'ikon' => '✕',
+                                'pesan' => 'Silakan periksa dan unggah ulang bukti pembayaran.'
+                            ],
+
+                            'terverifikasi' => [
+                                'label' => 'Terverifikasi',
+                                'warna' => '#18794e',
+                                'background' => '#e6f7ed',
+                                'ikon' => '✓',
+                                'pesan' => 'Pembayaran berhasil dikonfirmasi oleh admin.'
+                            ],
+
+                            default => [
+                                'label' => 'Status Tidak Diketahui',
+                                'warna' => '#666',
+                                'background' => '#f2f2f2',
+                                'ikon' => '•',
+                                'pesan' => 'Status pembayaran sedang diperbarui.'
+                            ],
+                        };
+                    @endphp
+
+                    <div style="
+                        display:flex;
+                        flex-direction:column;
+                        gap:7px;
+                        padding:13px 15px;
+                        margin-top:14px;
+                        margin-bottom:12px;
+                        border-radius:13px;
+                        background:{{ $infoPembayaran['background'] }};
+                        border:1px solid {{ $infoPembayaran['warna'] }}33;
+                    ">
+
+                        <div style="
+                            display:flex;
+                            align-items:center;
+                            gap:7px;
+                            font-size:13px;
+                            font-weight:700;
+                            color:{{ $infoPembayaran['warna'] }};
+                        ">
+                            <span>{{ $infoPembayaran['ikon'] }}</span>
+                            STATUS PEMBAYARAN
+                        </div>
+
+                        <strong style="
+                            font-size:16px;
+                            color:{{ $infoPembayaran['warna'] }};
+                        ">
+                            {{ $infoPembayaran['label'] }}
                         </strong>
-                    </p>
+
+                        <small style="color:#66545c;line-height:1.5;">
+                            {{ $infoPembayaran['pesan'] }}
+                        </small>
+
+                    </div>
 
                     {{-- TOTAL PEMBAYARAN --}}
                     <p style="font-size:20px;color:var(--pink-dark);font-weight:700;margin:8px 0 18px">

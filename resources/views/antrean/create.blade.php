@@ -32,7 +32,7 @@
         </h3>
 
         <p style="margin-bottom:12px;">
-            ⏰ <strong>Jam Operasional:</strong> 08.00–21.30 WIB
+            ⏰ <strong>Jam Operasional:</strong> 09.30–21.30 WIB
         </p>
 
         <p style="font-weight:700;margin-bottom:8px;">
